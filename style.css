@@ -143,8 +143,39 @@ table {
   display: none;
 }
 
+.start,
+.score {
+  margin: 0;
+  padding: 2rem 0;
+  width: 100%;
+
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+
+  background: black;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
 .start {
+  font-weight: 700;
+  color: #fff;
+
   cursor: pointer;
+}
+
+.start:hover,
+.start:focus {
+  color: crimson;
+}
+
+.score {
+  font-weight: 500;
+  color: cyan;
 }
 
 .userCar,
@@ -180,4 +211,16 @@ table {
 
   position: absolute;
   left: 145px;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
 }
