@@ -1,3 +1,7 @@
+:root {
+  --height-elem: 100px;
+}
+
 /* +++++++++++++++++++ Reset CSS +++++++++++++++++++ */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -111,6 +115,7 @@ section {
 
 body {
   line-height: 1;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 ol,
@@ -145,15 +150,21 @@ table {
 
 .start,
 .score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
-  padding: 2rem 0;
+  padding: 1rem 0;
+  height: calc(50px - 2rem);
   width: 100%;
 
+  font-size: 1.1rem;
   text-align: center;
-  font-size: 1.5rem;
-  font-family: sans-serif;
+  font-weight: 500;
+  color: #fff;
 
-  background: black;
+  background: #fff;
+  box-shadow: 2px 2px 2px 1px #ccc;
 
   position: absolute;
   left: 0;
@@ -161,29 +172,49 @@ table {
   z-index: 2;
 }
 
-.start {
-  font-weight: 700;
+.score {
+  color: cyan;
+
+  top: initial;
+  bottom: 0;
+}
+
+.btn {
+  padding: 5px 15px;
+
+  font: inherit;
   color: #fff;
 
+  background-color: black;
+  border: none;
   cursor: pointer;
 }
 
-.start:hover,
-.start:focus {
+.btn:not(:last-child) {
+  margin-right: 15px;
+}
+
+.btn:hover,
+.btn:focus {
   color: crimson;
 }
 
-.score {
-  font-weight: 500;
-  color: cyan;
+.btn:disabled {
+  color: #ddd;
+  background-color: #ccc;
+}
+
+.game {
+  display: flex;
+  height: 100%;
 }
 
 .userCar,
 .enemyCar {
-  height: 100px;
-  width: 50px;
+  height: var(--height-elem);
+  width: calc(var(--height-elem) / 2);
 
-  background: transparent url('./image/player.png') center / cover no-repeat;
+  background: transparent url('./image/player.png') center / contain no-repeat;
 
   position: absolute;
   left: 125px;
@@ -204,7 +235,7 @@ table {
 
 /* Lines are used to animate the movement of the car */
 .lines {
-  height: 50px;
+  height: calc(var(--height-elem) / 2);
   width: 10px;
 
   background: #fff;
