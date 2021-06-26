@@ -1,27 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Racing on JS</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 
+<header>
+  <h1 class="system__invite--start">Please select a difficulty level</h1>
+  <h1 class="system__invite--game hide">Press 'p' key to paused or 'Esc' to back on main menu</h1>
+  <h1 class="system__invite--continue hide">Press 'Space' or 'Enter' key to continue</h1>
+</header>
+
 <body>
-  <div class="score"></div>
   <div class="game">
-    <div class="start">
+    <div class="panel__start">
       <button class="btn" data-level-game="1"> EASY </button>
       <button class="btn" data-level-game="2"> MIDDLE </button>
       <button class="btn" data-level-game="3"> HARD </button>
     </div>
-    <div class="gameArea"></div>
+    <div class="panel__game hide">
+      <button class="btn game--paused"> PAUSED </button>
+      <button class="btn game--continue"> CONTINUE </button>
+      <button class="btn game--main"> MAIN </button>
+    </div>
+    <div class="gameArea">
+    </div>
+    <div class="panel__score"></div>
   </div>
   <!-- /.game -->
 
-  <script src="scripts.js"></script>
+  <script src="main.js"></script>
 </body>
 
 </html>

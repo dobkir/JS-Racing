@@ -1,5 +1,7 @@
 :root {
-  --height-elem: 100px;
+  font-size: 1em;
+  --height-elem: 6.25rem;
+  --system-invite: 2rem;
 }
 
 /* +++++++++++++++++++ Reset CSS +++++++++++++++++++ */
@@ -143,13 +145,9 @@ table {
 
 /* +++++++++++++++ End of Reset CSS +++++++++++++++ */
 
-
-.hide {
-  display: none;
-}
-
-.start,
-.score {
+.panel__start,
+.panel__score,
+.panel__game {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,19 +162,30 @@ table {
   color: #fff;
 
   background: #fff;
-  box-shadow: 2px 2px 2px 1px #ccc;
+  box-shadow: 0 2px 2px 1px #ccc;
 
   position: absolute;
   left: 0;
-  top: 0;
+  top: var(--system-invite);
   z-index: 2;
 }
 
-.score {
+.panel__score {
   color: cyan;
+
+  box-shadow: 0 -2px -2px 1px rgb(22, 22, 22);
 
   top: initial;
   bottom: 0;
+}
+
+h1 {
+  height: var(--system-invite);
+
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: var(--system-invite);
+  color: #222;
 }
 
 .btn {
@@ -188,6 +197,7 @@ table {
   background-color: black;
   border: none;
   cursor: pointer;
+  z-index: 3;
 }
 
 .btn:not(:last-child) {
@@ -202,6 +212,7 @@ table {
 .btn:disabled {
   color: #ddd;
   background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .game {
@@ -210,7 +221,7 @@ table {
 }
 
 .userCar,
-.enemyCar {
+.botCar {
   height: var(--height-elem);
   width: calc(var(--height-elem) / 2);
 
@@ -222,7 +233,7 @@ table {
 }
 
 .gameArea {
-  height: 100vh;
+  /* height: 100vh; */
   width: 300px;
   margin: auto;
 
@@ -254,4 +265,8 @@ table {
   height: 1px !important;
   width: 1px !important;
   overflow: hidden;
+}
+
+.hide {
+  display: none;
 }
